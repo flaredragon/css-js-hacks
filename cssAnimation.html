@@ -1,0 +1,45 @@
+<html>
+<style>
+    body {
+        background: #333;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .track {
+        stroke: #ccc;
+    }
+    
+    .marker {
+        motion-path: path('M 5 5 m -4, 0 a 4,4 0 1,0 8,0 a 4,4 0 1,0 -8,0');
+        offset-path: path('M 5 5 m -4, 0 a 4,4 0 1,0 8,0 a 4,4 0 1,0 -8,0');
+        animation: move 3s linear infinite;
+    }
+    
+    @keyframes move {
+        100% {
+            motion-offset: 100%;
+            offset-distance: 100%;
+        }
+    }
+</style>
+
+<body>
+    <svg viewbox="0,0 10,10" width="200px" height="200px">
+  
+                <!-- the path to be animated along -->  
+                <path 
+                  class="track"
+                  fill="none"
+                  stroke-width="0.25"
+                  d="M 5 5 m -4, 0 a 4,4 0 1,0 8,0 a 4,4 0 1,0 -8,0"
+                />
+                
+                <!-- the mover -->
+                <circle class="marker" r="1" fill="orange"></circle>
+                
+              </svg>
+</body>
+
+</html>
