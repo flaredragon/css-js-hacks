@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Button Effect</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            background-color: #4c4f79;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+        .wrapper-inner{
+            float: left;
+            width: 100%;
+            margin-top: 125px;
+        }
+        .wrapper-inner-title {
+            width: 100%;
+            margin-top: 30px;
+            font-size: 25px;
+            color: #666666;
+            float: left;
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        .wrapper-inner-backgrounds {
+            display: flex;
+            justify-content: center;
+            height: 300px;
+        }
+        .wrapper-inner-backgrounds-first{
+            height: 300px;
+            width: 33.33%;
+        }
+        .button{
+            line-height: 50px;
+            height: 50px;
+            text-align: center;
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 125px;
+            width: 60%;
+            cursor: pointer;
+        }
+        .button-left-to-right{
+            color: rgba(255,255,255,1);
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            -o-transition: all 0.5s;
+            transition: all 0.5s;
+            border: 1px solid rgba(255,255,255,0.5);
+            position: relative;	
+        }
+        .button-left-to-right a{
+            color: rgba(51,51,51,1);
+            text-decoration: none;
+            display: block;
+        }
+        .button-left-to-right span{
+            z-index: 2;	
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;	
+        }
+        .button-left-to-right::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0;
+            background-color: rgba(255,255,255,0.5);
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            -o-transition: all 0.3s;
+            transition: all 0.3s;
+
+        }
+        .button-left-to-right:hover::before{
+            opacity: 1;
+            width: 100%;
+        }
+
+
+        .button-inside-outside{
+            color: rgba(255,255,255,1);
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            -o-transition: all 0.5s;
+            transition: all 0.5s;
+            border: 1px solid rgba(255,255,255,0.5);
+            position: relative;
+        }
+        .button-inside-outside a{
+            color: rgba(51,51,51,1);
+            text-decoration: none;
+            display: block;
+        }
+        .button-inside-outside span{
+            z-index: 2;	
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;	
+        }
+        .button-inside-outside::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0;
+            background-color: rgba(255,255,255,0.5);
+            -webkit-transition: all 0.4s;
+            -moz-transition: all 0.4s;
+            -o-transition: all 0.4s;
+            transition: all 0.4s;
+            -webkit-transform: scale(0.5, 1);
+            transform: scale(0.5, 1);
+        }
+        .button-inside-outside:hover::before{
+            opacity: 1;
+            -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper-inner">
+        <div class="wrapper-inner-backgrounds">
+            <div class="wrapper-inner-backgrounds-first"><div class="button button-left-to-right"><span>Test 1</span></div></div>
+            <div class="wrapper-inner-backgrounds-first"><div class="button button-inside-outside"><span>Test 2</span></div></div>
+        </div>
+    </div>
+
+    <script></script>
+
+</body>
+
+</html>
