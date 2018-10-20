@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!-- JavaScript hack to change colors on devices based on geolocation.
+Colors bars move based on how fast you shake the device. -->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shake it</title>
+</head>
+<style>
+    #x{
+        background: deeppink;
+        height: 100px;
+        transition: width linear;
+    }
+    #y{
+        background: blue;
+        height: 100px;
+        transition: width ease-in-out;
+    }
+    #z{
+        background: lightseagreen;
+        height: 100px;
+        transition: width linear;
+    }
+</style>
+<body>
+<p id="demo"></p>
+<div id = "x"></div>
+<div id = "y"></div>
+<div id = "z"></div>
+
+<script>
+    var d1 = document.getElementById("x");
+    var d2 = document.getElementById("y");
+    var d3 = document.getElementById("z");
+    window.addEventListener('devicemotion',ShakeIt,true);
+    function ShakeIt(event) {
+        var x = event.accelerationIncludingGravity.x;
+        var y = event.accelerationIncludingGravity.y;
+        var z = event.accelerationIncludingGravity.z;
+        var one = Math.round(x)*100;
+        var two = Math.round(y)*100;
+        var three = Math.round(z)*100;
+        d1.style.width = one+'px';
+        d2.style.width = two+'px';
+        d3.style.width = three+'px';
+    }
+</script>
+</body>
+</html>
