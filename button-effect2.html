@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Button Effect</title>
+    <style>
+        body {
+            width: cover;
+            height: 650px;   
+            margin: 0px;
+            padding: 0px;
+            background-color: #4c4f79;
+            font-family: 'Source Sans Pro', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .wrapper-inner{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 70%;
+            background: black;
+
+        }
+        .button{
+             font-size: 30px;
+            line-height: 50px;
+            height: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            width: 35%;
+            cursor: pointer;
+            margin: 50px;
+            border:2px solid #4c4f79;
+            border-bottom-right-radius: 20%;
+            border-top-left-radius: 20%;
+        }
+        .button-left-to-right{
+            color:#4c4f79;
+            -webkit-transition: all 0.9s;
+            -moz-transition: all 0.9s;
+            -o-transition: all 0.9s;
+            transition: all 0.9s;
+            position: relative;	
+        }
+        .button-left-to-right span{
+            z-index: 2;	
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;	
+        }
+        .button-left-to-right::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0;
+             background:url(purty_wood.png);
+            background-size: 100% 100%;
+            -webkit-transition: all 0.8s;
+            -moz-transition: all 0.8s;
+            -o-transition: all 0.8s;
+            transition: all 0.8s;
+              border-bottom-right-radius: 20%;
+            border-top-left-radius: 20%;
+
+        }
+        .button-left-to-right:hover::before{
+            opacity: 1;
+            width: 100%;
+            border-bottom-right-radius: 20%;
+            border-top-left-radius: 20%;
+        }
+
+
+        .button-inside-outside{
+            color:#4c4f79;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            -o-transition: all 0.5s;
+            transition: all 0.5s;
+            position: relative;
+        }
+        .button-inside-outside span{
+            z-index: 2;	
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;	
+        }
+        .button-inside-outside::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0;
+            background:url(purty_wood.png);
+            background-size: 100% 100%;
+            -webkit-transition: all 0.4s;
+            -moz-transition: all 0.4s;
+            -o-transition: all 0.4s;
+            transition: all 0.4s;
+            -webkit-transform: scale(0,0);
+            transform: scale(0, 0);
+              border-bottom-right-radius: 20%;
+            border-top-left-radius: 20%;
+        }
+        .button-inside-outside:hover::before{
+            opacity: 1;
+            -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+            border-bottom-right-radius: 20%;
+            border-top-left-radius: 20%;
+           
+        };
+        
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper-inner">
+           <div class="button button-left-to-right"><span>Test 1</span></div>
+           <div class="button button-inside-outside"><span>Test 2</span></div>
+    </div>
+
+    <script></script>
+
+</body>
+
+</html>
