@@ -2,6 +2,7 @@
 <html>
 
 <head>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
    <title>Button Effect</title>
     <style>
         body {
@@ -129,6 +130,225 @@
             -webkit-transform: scale(1, 1);
             transform: scale(1, 1);
         }
+       
+       /* Global Button Styles */
+        a.animated-button:link,
+        a.animated-button:visited {
+            position: relative;
+            display: block;
+            margin: 30px auto 0;
+            padding: 14px 15px;
+            color: #fff;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            overflow: hidden;
+            letter-spacing: .08em;
+            border-radius: 0;
+            text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
+            -webkit-transition: all 1s ease;
+            -moz-transition: all 1s ease;
+            -o-transition: all 1s ease;
+            transition: all 1s ease;
+        }
+
+        a.animated-button:link:after,
+        a.animated-button:visited:after {
+            content: "";
+            position: absolute;
+            height: 0%;
+            left: 50%;
+            top: 50%;
+            width: 150%;
+            z-index: -1;
+            -webkit-transition: all 0.75s ease 0s;
+            -moz-transition: all 0.75s ease 0s;
+            -o-transition: all 0.75s ease 0s;
+            transition: all 0.75s ease 0s;
+        }
+
+        a.animated-button:link:hover,
+        a.animated-button:visited:hover {
+            color: #FFF;
+            text-shadow: none;
+        }
+
+        a.animated-button:link:hover:after,
+        a.animated-button:visited:hover:after {
+            height: 450%;
+        }
+
+        a.animated-button:link,
+        a.animated-button:visited {
+            position: relative;
+            display: block;
+            margin: 30px auto 0;
+            padding: 14px 15px;
+            color: #fff;
+            font-size: 14px;
+            border-radius: 0;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            overflow: hidden;
+            letter-spacing: .08em;
+            text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
+            -webkit-transition: all 1s ease;
+            -moz-transition: all 1s ease;
+            -o-transition: all 1s ease;
+            transition: all 1s ease;
+        }
+        
+        /* BTN from bootom to top */
+        a.animated-button.bootom-to-top {
+            color: #fff;
+            cursor: pointer;
+            display: block;
+            position: relative;
+            border: 2px solid #F7CA18;
+            transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+        }
+
+        a.animated-button.bootom-to-top:hover {
+            color: #000 !important;
+            background-color: transparent;
+            text-shadow: none;
+        }
+
+        a.animated-button.bootom-to-top:hover:before {
+            bottom: 0%;
+            top: auto;
+            height: 100%;
+        }
+
+        a.animated-button.bootom-to-top:before {
+            display: block;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            height: 0px;
+            width: 100%;
+            z-index: -1;
+            content: '';
+            color: #000 !important;
+            background: #F7CA18;
+            transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+        }
+        
+        /* BTN from top to bottom */
+        a.animated-button.top-to-bottom {
+            color: #fff;
+            cursor: pointer;
+            display: block;
+            position: relative;
+            border: 2px solid #F7CA18;
+            transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+        }
+
+        a.animated-button.top-to-bottom:hover {
+            color: #000 !important;
+            background-color: transparent;
+            text-shadow: ntwo;
+        }
+
+        a.animated-button.top-to-bottom:hover:before {
+            top: 0%;
+            bottom: auto;
+            height: 100%;
+        }
+
+        a.animated-button.top-to-bottom:before {
+            display: block;
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+            height: 0px;
+            width: 100%;
+            z-index: -1;
+            content: '';
+            color: #000 !important;
+            background: #F7CA18;
+            transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+        }
+        
+        /* BTN from left to right */
+        a.animated-button.left-to-right {
+            color: #fff;
+            cursor: pointer;
+            display: block;
+            position: relative;
+            border: 2px solid #F7CA18;
+            transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+            0s;
+        }
+
+        a.animated-button.left-to-right:hover {
+            color: #000 !important;
+            background-color: transparent;
+            text-shadow: nthree;
+        }
+
+        a.animated-button.left-to-right:hover:before {
+            left: 0%;
+            right: auto;
+            width: 100%;
+        }
+
+        a.animated-button.left-to-right:before {
+            display: block;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            height: 100%;
+            width: 0px;
+            z-index: -1;
+            content: '';
+            color: #000 !important;
+            background: #F7CA18;
+            transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+            0s;
+        }
+        
+        /* BTN from right to left */
+        a.animated-button.right-to-left {
+            color: #fff;
+            cursor: pointer;
+            display: block;
+            position: relative;
+            border: 2px solid #F7CA18;
+            transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+            0s;
+        }
+
+        a.animated-button.right-to-left:hover {
+            color: #000 !important;
+            background-color: transparent;
+            text-shadow: nfour;
+        }
+
+        a.animated-button.right-to-left:hover:before {
+            right: 0%;
+            left: auto;
+            width: 100%;
+        }
+
+        a.animated-button.right-to-left:before {
+            display: block;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            width: 0px;
+            z-index: -1;
+            content: '';
+            color: #000 !important;
+            background: #F7CA18;
+            transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+            0s;
+        }
         
     </style>
 </head>
@@ -139,6 +359,15 @@
         <div class="wrapper-inner-backgrounds">
             <div class="wrapper-inner-backgrounds-first"><div class="button button-left-to-right"><span>Test 1</span></div></div>
             <div class="wrapper-inner-backgrounds-first"><div class="button button-inside-outside"><span>Test 2</span></div></div>
+        </div>
+    </div>
+   
+   <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-3 col-xs-6"> <a href="#" class="btn btn-sm animated-button bootom-to-top">From bootom to top</a> </div>
+            <div class="col-md-3 col-sm-3 col-xs-6"> <a href="#" class="btn btn-sm animated-button top-to-bottom">From top to bottom</a> </div>
+            <div class="col-md-3 col-sm-3 col-xs-6"> <a href="#" class="btn btn-sm animated-button left-to-right">From left to right</a> </div>
+            <div class="col-md-3 col-sm-3 col-xs-6"> <a href="#" class="btn btn-sm animated-button right-to-left">From right to left</a> </div>
         </div>
     </div>
 
