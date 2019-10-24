@@ -1,0 +1,11 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+div{
+	font-size: 50px;
+	position: absolute;
+	top: 200px;
+	left: 400px;
+	color: red;
+}
