@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fancy CSS Shadow</title>
+    <style>
+        html {
+            height: 100%;
+            font-family: sans-serif;
+        }
+        body {
+            display:flex;
+            height:100%;
+            margin:0;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(0deg, rgba(180,180,180,1) 0%, rgba(232,232,232,1) 50%, rgba(255,255,255,1) 95%);
+        }
+
+        .shadowUp, .shadowDown {
+            position: relative;
+            height: 20px;
+        }
+        .shadowUp {
+            top: 20px;
+        }
+        .shadowDown {
+            top: -20px;
+        }
+        .shadowUp:before,
+        .shadowDown:before {
+            position: absolute;
+            content: '';
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            background-color: rgba(155,155,0,.25);
+            border-radius: 50%/20px;
+        }
+        .shadowUp:before {
+            box-shadow: rgba(0,0,0,.1) 0 -5px 10px;
+            clip: rect(-50px,auto,0,0);
+        }
+        .shadowDown:before {
+            box-shadow: rgba(0,0,0,.1) 0 5px 10px;
+            clip: rect(20px,auto,50px,0);
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="shadowUp" />
+<h1>Lorem Ipsum dolor sit amet</h1>
+<div class="shadowDown" />
+
+</body>
+
+</html>
