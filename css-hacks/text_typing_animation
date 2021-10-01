@@ -1,0 +1,94 @@
+/* Usage 
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Typing Text Animation | HTML & CSS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="static-txt">I'm a</div>
+    <ul class="dynamic-txts">
+      <li><span>Youtuber</span></li>
+      <li><span>Designer</span></li>
+      <li><span>Developer</span></li>
+      <li><span>Freelancer</span></li>
+    </ul>
+  </div>
+</body> */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #082032;
+}
+.wrapper {
+    display: flex;
+}
+
+.wrapper .static-txt {
+    color: #fff;
+    font-size: 60px;
+    font-weight: 400;
+}
+
+.wrapper .dynamic-txts {
+    margin-left: 15px;
+    line-height: 90px;
+    height: 90px;
+    overflow: hidden;
+}
+
+.dynamic-txts li {
+    list-style: none;
+    color: #ff4c29;
+    font-size: 60px;
+    font-weight: 500;
+    top: 0;
+    position: relative;
+    animation: slide 12s steps(4) infinite;
+}
+
+@keyframes slide {
+    100% {
+        top: -360px;
+    }
+}
+
+.dynamic-txts li {
+    position: relative;
+}
+
+.dynamic-txts li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #082032;
+    border-left: 2px solid #ff4c29;
+    animation: typing 3s steps(10) infinite;
+}
+
+@keyframes typing {
+    40%,
+    60% {
+        left: calc(100% + 30px);
+    }
+    100% {
+        left: 0;
+    }
+}
